@@ -1,0 +1,13 @@
+{
+  "main": "app/main.js",
+  "author": "RalitsaSimova",
+  "license": "ISC",
+  "scripts": {
+    "build": "npm install && npx tsc",
+    "start": "nodemon ./app/main.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}

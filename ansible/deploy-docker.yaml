@@ -1,0 +1,22 @@
+---
+- name: Deploy Docker and Run Container
+  hosts: all
+  become: true  
+
+  tasks:
+    - name: Install docker
+      yum:
+        name: docker
+        state: present
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Pull Docker Image
+      command: docker pull my-app
+
+    - name: Run Docker Container
+      command: docker run -d -p 80:80 --name my-container my-app
